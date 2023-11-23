@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14  # Change this to your preferred Node.js version
+
+  build:
+    commands:
+      - npm install -g serverless
+      - serverless deploy
+
+artifacts:
+  files: '**/*'
+  base-directory: .serverless
