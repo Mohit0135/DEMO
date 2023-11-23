@@ -1,23 +1,11 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 16  # Change this to your preferred Node.js version
-
-  pre_build:
-    commands:
-      - npm install  # Install any dependencies your project needs before building
-
   build:
     commands:
-      - npm run build  # Replace with your actual build command
-      - npm test  # If you have tests, run them here
-
-  post_build:
-    commands:
-      - xdg-open main.html  # Open main.html using the default application
+      - echo "Build phase starting..."
 
 artifacts:
-  files: '**/*'
-  base-directory: .
+  files:
+    - '**/*'  # Include all files in the build artifact
+  discard-paths: yes
